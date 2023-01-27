@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+  "name": "HighlightMe",
+  "description": "A chrome extension that allows users to save notes from text on any website visited, and the ability to download all saved notes at a later time through the use of a button",
+  "version": "1.0",
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "icons": {
+    "16": "images/highlighter-16.png",
+    "19": "images/highlighter-19.png",
+    "32": "images/highlighter-32.png",
+    "48": "images/highlighter-48.png",
+    "64": "images/highlighter-64.png",
+    "96": "images/highlighter-96.png",
+    "128": "images/highlighter-128.png",
+    "256": "images/highlighter-256.png"
+  },
+  "permissions": ["activeTab", "storage"],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
